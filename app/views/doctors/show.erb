@@ -1,0 +1,10 @@
+<% @doctor.appointments.each do |app| %>
+<p><%=Date::MONTHNAMES[app.appointment_datetime.month]%>
+<%=app.appointment_datetime.day%>,
+<%=app.appointment_datetime.year%>
+at
+<%=app.appointment_datetime.strftime("%H:%M")%>
+</p>
+
+<%= link_to(app.patient.name, app.patient) %>
+<% end %>
